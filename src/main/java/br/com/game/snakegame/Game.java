@@ -11,7 +11,9 @@ public class Game extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        new Scenario(primaryStage);
+        Snake snake = new Snake();
+        Scenario scenario = new Scenario(primaryStage, snake);
+        EventLoop eventLoop = new EventLoop(scenario, snake);
 
     }
 }
